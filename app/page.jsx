@@ -1,4 +1,7 @@
+import dbConnect from "@/lib/dbConnect";
+
 const Page = async () => {
+  await dbConnect();
   await new Promise((res, rej) =>
     setTimeout(() => {
       res();
