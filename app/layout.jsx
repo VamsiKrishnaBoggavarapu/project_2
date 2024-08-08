@@ -1,17 +1,26 @@
-import { Inter } from "next/font/google";
+import { Fira_Sans } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 
-const inter = Inter({ subsets: ["latin"] });
+const firaSans = Fira_Sans({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata = {
-  title: "Shopping Cart",
-  description: "Clothing and Electronics store",
+  title: "Spices",
+  description: "Spices brings taste to your kitchen",
 };
 
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={firaSans.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 };
